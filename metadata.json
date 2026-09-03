@@ -1,0 +1,8 @@
+{
+  "name": "Vegas Roulette",
+  "description": "Vegas Roulette casino game with interactive betting board, chips, spinning wheel, and round history.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

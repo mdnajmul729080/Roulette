@@ -6,24 +6,29 @@ class Player {
 
 let gambler = new Player(1000)
 
+let roundResult = null;
+let roundWinnings = 0;
+
 const valueOfChips = document.getElementById("chipsValue")
-valueOfChips.textContent = `Player Chips | Total Value: $${gambler.money}`
+if (valueOfChips) {
+    valueOfChips.textContent = `Player Chips | Total Value: $${gambler.money}`
+}
 
 let chipWallet = gambler.money
 
 const newGameAudio = document.getElementById("newGameAudio")
 function newGameSound() {
-    newGameAudio.play();
+    if (newGameAudio) newGameAudio.play().catch(() => {});
 }
 
 const clearBetsAudio = document.getElementById("clearBetsAudio")
 function clearBetsSound() {
-    clearBetsAudio.play();
+    if (clearBetsAudio) clearBetsAudio.play().catch(() => {});
 }
 
 const placeBetsAudio = document.getElementById("placeBetsAudio")
 function placeBetsSound() {
-    placeBetsAudio.play();
+    if (placeBetsAudio) placeBetsAudio.play().catch(() => {});
 }
 
 const chip1 = document.getElementById("chip_1")
@@ -179,7 +184,7 @@ let payouts = {
         singleNumThirtyOne: [31],
         singleNumThirtyTwo: [32],
         singleNumThirtyThree: [33],
-        singleNumThirtyFour: [4],
+        singleNumThirtyFour: [34],
         singleNumThirtyFive: [35],
         singleNumThirtySix: [36],
     },

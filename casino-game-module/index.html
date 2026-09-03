@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Vegas Roulette - Casino Game Module</title>
+  <meta name="description" content="Professional Vegas Roulette casino game module with real ball physics, betting felt, chip stacks, and analytics." />
+  <meta name="theme-color" content="#0c1a11" />
+  
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="/casino-game-module/src/styles/theme.css" />
+  <link rel="stylesheet" href="/casino-game-module/src/styles/board.css" />
+  <link rel="stylesheet" href="/casino-game-module/src/styles/modal.css" />
+</head>
+<body>
+  <div id="casinoAppMount"></div>
+
+  <script type="module">
+    import { mountCasinoRoulette } from '/casino-game-module/src/index.js';
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const mount = document.getElementById('casinoAppMount');
+      mountCasinoRoulette(mount, {
+        initialBalance: 1000,
+        platform: {
+          mode: 'integrated',
+          apiBaseUrl: '/api/roulette'
+        }
+      });
+    });
+  </script>
+</body>
+</html>

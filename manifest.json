@@ -1,0 +1,33 @@
+{
+  "id": "/",
+  "name": "Vegas Roulette - Casino Game Module",
+  "short_name": "VegasRoulet",
+  "description": "Vegas Roulette casino game with interactive betting board, chips, spinning wheel, and round history.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#0c1a11",
+  "background_color": "#07100a",
+  "categories": ["games", "casino", "entertainment"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

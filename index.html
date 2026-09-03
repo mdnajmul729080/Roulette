@@ -2,21 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main/css/startup.css">
-    <script src="main/js/script.js"></script>
-    <title>Welcome to Vegas Roulette</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Vegas Roulette</title>
+    <meta name="description" content="Vegas Roulette casino game with interactive betting board, chips, spinning wheel, and round history.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Vegas Roulette">
+    <meta property="og:description" content="Vegas Roulette casino game with interactive betting board, chips, spinning wheel, and round history.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/pwa-512x512.png">
+
+    <!-- PWA & Mobile Icons -->
+    <meta name="theme-color" content="#0c1a11">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="VegasRoulet">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Casino Stylesheets -->
+    <link rel="stylesheet" href="/casino-game-module/src/styles/theme.css">
+    <link rel="stylesheet" href="/casino-game-module/src/styles/board.css">
+    <link rel="stylesheet" href="/casino-game-module/src/styles/modal.css">
 </head>
-<body class="start">
-    <div class="slideTitle">
-        <div>
-            <a class="linkToMain" href="main/roulette.html"><h1 class="welcome">Welcome To</h1></a>
-        </div>
-        <div class="invisible">filler</div>
-        <a class="linkToMain" href="main/roulette.html"><img class="vegasSign" src="main/assets/Vegas.png"></a>
+<body>
+    <div id="casinoAppMount"></div>
 
-    </div>
+    <script type="module">
+        import { mountCasinoRoulette } from '/casino-game-module/src/index.js';
 
-
+        window.addEventListener('DOMContentLoaded', () => {
+            const mount = document.getElementById('casinoAppMount');
+            mountCasinoRoulette(mount, {
+                initialBalance: 1000,
+                platform: {
+                    mode: 'integrated',
+                    apiBaseUrl: '/api/roulette'
+                }
+            });
+        });
+    </script>
 </body>
 </html>
